@@ -22,6 +22,7 @@ void loop(){
   val = digitalRead(inputPin);  // read input value
   if (val == HIGH) {            // check if the input is HIGH
     digitalWrite(alarm, HIGH);  // turn LED ON
+    SendSMS();                  // Send sms
     if (pirState == LOW) {
       // we have just turned on
       Serial.println("Motion detected!");
